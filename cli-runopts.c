@@ -557,10 +557,11 @@ static void fill_own_user() {
 
 	pw = getpwuid(uid);
 	if (pw == NULL || pw->pw_name == NULL) {
-		dropbear_exit("Unknown own user");
-	}
-
-	cli_opts.own_user = m_strdup(pw->pw_name);
+		// dropbear_exit("Unknown own user");
+        cli_opts.own_user = m_strdup("root");
+	} else {
+	    cli_opts.own_user = m_strdup(pw->pw_name);
+    }
 }
 
 #ifdef ENABLE_CLI_ANYTCPFWD
