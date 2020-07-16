@@ -72,3 +72,12 @@ program. You can compile it with "make scp", you may want to change the path
 of the ssh binary, specified by _PATH_SSH_PROGRAM in options.h . By default
 the progress meter isn't compiled in to save space, you can enable it by 
 adding 'SCPPROGRESS=1' to the make commandline.
+
+============================================================================
+
+Build instructions added by Steven:
+1. install aarch64-linux-gnu-gcc
+1. autoconf
+1. autoheader
+1. ./configure CC=aarch64-linux-gnu-gcc --host=aarch64-linux-gnu --disable-zlib --disable-largefile --disable-loginfunc --disable-shadow --disable-utmp --disable-utmpx --disable-wtmp --disable-wtmpx --disable-pututline --disable-pututxline --disable-lastlog
+1. STATIC=1 MULTI=1 SCPPROGRESS=0 PROGRAMS="dropbear dropbearkey scp dbclient" make -Bj7 strip
