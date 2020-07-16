@@ -79,5 +79,5 @@ Build instructions added by Steven:
 1. install aarch64-linux-gnu-gcc
 1. autoconf
 1. autoheader
-1. ./configure CC=aarch64-linux-gnu-gcc --host=aarch64-linux-gnu --disable-zlib --disable-largefile --disable-loginfunc --disable-shadow --disable-utmp --disable-utmpx --disable-wtmp --disable-wtmpx --disable-pututline --disable-pututxline --disable-lastlog
-1. STATIC=1 MULTI=1 SCPPROGRESS=0 PROGRAMS="dropbear dropbearkey scp dbclient" make -Bj7 strip
+1. ./configure CC=aarch64-linux-gnu-gcc CFLAGS="-DMAX_UNAUTH_PER_IP=10 -DMAX_UNAUTH_CLIENTS=60 -DDEBUG_TRACE" --host=aarch64-linux-gnu --disable-zlib --disable-largefile --disable-loginfunc --disable-shadow --disable-utmp --disable-utmpx --disable-wtmp --disable-wtmpx --disable-pututline --disable-pututxline --disable-lastlog
+1. STATIC=1 MULTI=1 SCPPROGRESS=1 PROGRAMS="dropbear dropbearkey scp dbclient" make -Bj7 strip
