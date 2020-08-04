@@ -227,7 +227,7 @@ etc) slower (perhaps by 50%). Recommended for most small systems. */
  * OpenSSH), set the path below. If the path isn't defined, sftp will not
  * be enabled */
 #ifndef SFTPSERVER_PATH
-#define SFTPSERVER_PATH "/data/data/br.com.bott.droidsshd/files/bin/sftp-server"
+#define SFTPSERVER_PATH "/system/bin/sftp-server"
 #endif
 
 /* This is used by the scp binary when used as a client binary. If you're
